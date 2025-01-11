@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\EmployeeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\LogoutController;
+use App\Http\Controllers\Api\Nilai;
 
 /**
  * route "/login"
@@ -22,3 +23,6 @@ Route::middleware('auth:api')->group(function () {
 });
 
 Route::post('/logout', LogoutController::class)->name('logout');
+
+Route::get('/nilaiRT', [Nilai::class, 'nilaiRT']);
+Route::get('/nilaiST', [Nilai::class, 'nilaiST']);
